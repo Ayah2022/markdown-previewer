@@ -1,0 +1,165 @@
+:root {
+    --bg: #87b5b5;
+    --panel: #c0d8d8;
+    --text: black;
+    --muted: #9aa4c7;
+    --border: #1d2f2f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+
+    background: var(--bg) !important;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+    width: 100%;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+h1 {
+    margin: 0 0 16px;
+    font-size: 24px;
+    color: var(--text);
+}
+
+.panels {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+}
+
+.panel .toolbar {
+    height: 32px;
+    flex-shrink: 0;
+    background: #4aa3a3;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 0.3rem;
+    border: 1px solid #1d2f2f;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+}
+
+.panel .toolbar i {
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+.panel .toolbar i.fa-arrows-alt:before {
+    content: "\f0b2";
+    /* Unicode for expand */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    /* Needed for solid icons */
+}
+
+.panel .toolbar i.fa-compress:before {
+    content: "\f066";
+    /* Unicode for compress */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.panel .toolbar i.fa-free-code-camp:before {
+    content: "\f2c5";
+    /* Unicode for compress */
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 900;
+    font-size: 20px;
+    margin-inline-end: 5px;
+}
+
+#editor,
+#preview {
+    background: var(--panel);
+    padding: 16px;
+    border: 1px solid #1d2f2f;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+    border-top: none;
+
+    overflow: auto;
+    min-height: 200px;
+}
+
+
+
+
+
+
+#preview pre {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.editorWrap {
+    min-width: 600px;
+    color: var(--text);
+    resize: vertical;
+}
+
+.previewWrap {
+    min-width: 800px;
+}
+
+.panel.maximized,
+.panel.maximized {
+    height: 100vh;
+
+}
+
+.panel.maximized .editorWrap,
+.panel.maximized .previewWrap {
+    flex: 1;
+    /* grow to fill leftover space */
+    height: auto;
+    /* let flexbox control it */
+    min-height: 0;
+    /* prevent overflow issues */
+}
+
+#preview img {
+    display: block;
+    max-width: 90%;
+    margin: 2rem auto;
+}
+
+.hide {
+    display: none;
+}
+
+#preview code {
+    background: white;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
